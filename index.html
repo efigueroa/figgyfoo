@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random GIF</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img id="gifDisplay" alt="Random GIF">
+
+    <script>
+        function loadRandomGif() {
+            const gifs = [
+                "gifs/first.gif",  // Replace with your GIF filenames
+                "gifs/second.gif"
+            ];
+            const randomIndex = Math.floor(Math.random() * gifs.length);
+            document.getElementById('gifDisplay').src = gifs[randomIndex];
+        }
+
+        loadRandomGif();
+        setInterval(loadRandomGif, 5000);
+    </script>
+</body>
+</html>
